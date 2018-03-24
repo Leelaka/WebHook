@@ -1,0 +1,91 @@
+device id = 33002e000651353530373132
+
+//Light level 
+
+int led = D7;  // The on-board LED
+
+void setup() {
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(led, HIGH);   // Turn ON the LED
+
+  String light = String(random(0, 100));
+  Particle.publish("light", light, PRIVATE);
+  delay(20000);               // Wait for 20 seconds
+
+  digitalWrite(led, LOW);    // Turn OFF the LED
+  delay(20000);               // Wait for 20 seconds
+}
+
+---------------------------------------------------------
+
+//amb temp
+
+int led = D7;  // The on-board LED
+
+void setup() {
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(led, HIGH);   // Turn ON the LED
+
+  String temp = String(random(30, 80));
+  Particle.publish("temp", temp, PRIVATE);
+  delay(30000);               // Wait for 30 seconds
+
+  digitalWrite(led, LOW);    // Turn OFF the LED
+  delay(30000);               // Wait for 30 seconds
+}
+---------------------------------------------------------------
+
+//noise level 
+
+int led = D7;  // The on-board LED
+
+void setup() {
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(led, HIGH);   // Turn ON the LED
+
+  String noise = String(random(30, 80));
+  Particle.publish("noise", noise, PRIVATE);
+  delay(15000);               // Wait for 15 seconds
+
+  digitalWrite(led, LOW);    // Turn OFF the LED
+  delay(15000);               // Wait for 15 seconds
+}
+-----------------------------------------------------------------
+
+//all in one
+
+int led = D7;  // The on-board LED
+
+void setup() {
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(led, HIGH);   // Turn ON the LED
+    
+  String light = String(random(0, 100));
+  Particle.publish("light", light, PRIVATE);
+  delay(20000);               // Wait for 20 seconds
+  
+  String temp = String(random(30, 80));
+  Particle.publish("temp", temp, PRIVATE);
+  delay(30000);               // Wait for 30 seconds
+  
+  String noise = String(random(30, 80));
+  Particle.publish("noise", noise, PRIVATE);
+  delay(30000);               // Wait for 15 seconds
+
+  digitalWrite(led, LOW);    // Turn OFF the LED
+  delay(30000);               // Wait for 15 seconds
+}
+
+-----------------------------------------------------
