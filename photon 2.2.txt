@@ -1,4 +1,4 @@
-device id = 33002e000651353530373132
+
 
 //Light level 
 
